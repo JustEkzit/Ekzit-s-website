@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ekzit Designs</title>
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+        /* Add more custom styles for the header, search boxes, etc. */
+
+        /* Add your custom CSS styles for the shopping cart */
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            background-image: url("7af49c11-dfd4-41e6-8036-a33b42d29095.jpg"); /* Replace with your desired background image */
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            background-color: #337ab7;
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #23527c;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Ekzit Designs</h1>
+
+    <h2>Add Product</h2>
+    <form action="/add_product" method="POST">
+        <label for="name">Product Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <input type="submit" value="Add Product">
+    </form>
+
+    <h2>Product List</h2>
+    <div id="productList">
+        <!-- Product details will be populated dynamically using JavaScript -->
+    </div>
+
+    <h2>Shopping Cart</h2>
+    <div id="cartItems">
+        <!-- Display the items in the shopping cart dynamically using JavaScript -->
+    </div>
+
+    <script>
+        // JavaScript code for handling search functionality, adding items to the cart, etc.
+        function searchProducts() {
+            var searchQuery = document.getElementById("productSearch").value;
+            // Implement the search functionality to fetch products from photoshop.com API
+            // and display the results in the 'productList' div
+        }
+
+        // Implement the logic for adding items to the shopping cart and updating 'cartItems' div
+        // You can use local storage or a server-side solution to store the cart items
+
+        // Example product data
+        var products = [
+            { name: "Product 1", price: 10, description: "Product 1 description" },
+            { name: "Product 2", price: 20, description: "Product 2 description" },
+            { name: "Product 3", price: 30, description: "Product 3 description" }
+        ];
+
+        // Function to populate the product list
+        function populateProductList() {
+            var productListDiv = document.getElementById("productList");
+            productListDiv.innerHTML = "";
+
+            if (products.length > 0) {
+                var ul = document.createElement("ul");
+
+                products.forEach(function(product) {
+                    var li = document.createElement("li");
+                    var nameElement = document.createElement("strong");
+                    nameElement.textContent = product.name;
+                    li.appendChild(nameElement);
+                    li.innerHTML += "<br>Price: $" + product.price;
+                    li.innerHTML += "<br>Description: " + product.description;
+
+                    ul.appendChild(li);
+                });
+
+                productListDiv.appendChild(ul);
+            } else {
+                productListDiv.innerHTML = "<p>No products available</p>";
+            }
+        }
+
+        // Call the function to populate the product list on page load
+        populateProductList();
+
+        // Add more JavaScript functions as per your requirements
+    </style>
+    <script>
+        // Add your JavaScript code for handling search functionality, adding items to the cart, etc.
+    </script>
+</head>
+<body>
+    <header>
+        <!-- Add your header content here -->
+        <h1>Welcome to Ekzit Designs</h1>
+        <!-- Add your search boxes here -->
+        <input type="text" id="productSearch" placeholder="Search for products...">
+        <button onclick="searchProducts()">Search</button>
+    </header>
+
+    <main>
+        <!-- Add your main content here -->
+        <div id="productList">
+            <!-- Display the search results dynamically using JavaScript -->
+        </div>
+    </main>
+
+    <aside>
+        <!-- Add your shopping cart content here -->
+        <h2>Shopping Cart</h2>
+        <div id="cartItems">
+            <!-- Display the items in the shopping cart dynamically using JavaScript -->
+        </div>
+    </aside>
+
+    <footer>
+        <!-- Add your footer content here -->
+        <p>&copy; 2023 Ekzit Designs. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript code for handling search functionality, adding items to the cart, etc.
+        function searchProducts() {
+            var searchQuery = document.getElementById("productSearch").value;
+            // Implement the search functionality to fetch products from photoshop.com API
+            // and display the results in the 'productList' div
+        }
+
+        // Implement the logic for adding items to the shopping cart and updating 'cartItems' div
+        // You can use local storage or a server-side solution to store the cart items
+
+        // Add more JavaScript functions as per your requirements
+    </script>
+</body>
+</html>
